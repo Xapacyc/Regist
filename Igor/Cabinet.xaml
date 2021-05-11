@@ -1,0 +1,75 @@
+﻿<Window x:Class="Igor.Cabinet"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Igor"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="1000" MinHeight="600" MinWidth="1000">
+    <Grid>
+        <!--Фон-->
+        <Rectangle Fill="RoyalBlue" Height="500" Width="900" RadiusY="50" RadiusX="50"></Rectangle>
+
+        <!--Основная часть-->
+        <Border Height="500" Width="900">
+            <Grid>
+                <StackPanel>
+
+                    <!--Оглавление-->
+                    <StackPanel Orientation="Horizontal" Height="70" Width="800">
+                        <Label FontSize="50" FontWeight="Black" Foreground="White">Кабинет пользователя</Label>
+                    </StackPanel>
+
+                    <!--Поле-->
+                    <Border x:Name="blokOsnov" Background="White" Height="360" Width="800">
+                        <StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <StackPanel>
+                                    <Label Style="{StaticResource label}">Логин:</Label>
+                                    <Label Style="{StaticResource label}">ФИО:</Label>
+                                    <Label Style="{StaticResource label}">Почта:</Label>
+                                    <Label Style="{StaticResource label}">Телефон:</Label>
+                                    <Label Style="{StaticResource label}">Пол:</Label>
+                                </StackPanel>
+                                <StackPanel>
+                                    <TextBlock x:Name="loginText" FontSize="30" Height="50" Width="550" TextWrapping="Wrap"></TextBlock>
+                                    <TextBlock x:Name="fioText" FontSize="30" Height="50" Width="550" TextWrapping="Wrap"></TextBlock>
+                                    <TextBlock x:Name="pochtaText" FontSize="30" Height="50" Width="550" TextWrapping="Wrap"></TextBlock>
+                                    <TextBlock x:Name="telefonText" FontSize="30" Height="50" Width="550" TextWrapping="Wrap"></TextBlock>
+                                    <TextBlock x:Name="polText" FontSize="30" Height="50" Width="550" TextWrapping="Wrap"></TextBlock>
+                                </StackPanel>
+                            </StackPanel>
+                            <!--Кнопки "Редактировать"-->
+                            <Button x:Name="red" Width="300" Height="70" Background="RoyalBlue" FontSize="30" FontWeight="Black" Foreground="White" Click="red_Click">Редактировать</Button>
+
+                        </StackPanel>
+                    </Border>
+
+                    <!--Блок редактирования-->
+                    <Border x:Name="blokRed" Background="White" Height="360" Width="800" Visibility="Collapsed" >
+                        <StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <StackPanel>
+                                    <Label Style="{StaticResource label}">ФИО:</Label>
+                                    <Label Style="{StaticResource label}">Почта:</Label>
+                                    <Label Style="{StaticResource label}">Телефон:</Label>
+                                </StackPanel>
+                                <StackPanel>
+                                    <TextBox x:Name="fioTextRed" FontSize="30" Height="50" Width="550" TextWrapping="Wrap"></TextBox>
+                                    <TextBox x:Name="pochtaTextRed" FontSize="30" Height="50" Width="550" TextWrapping="Wrap"></TextBox>
+                                    <TextBox x:Name="telefonTextRed" FontSize="30" Height="50" Width="550" TextWrapping="Wrap"></TextBox>
+                                </StackPanel>
+                            </StackPanel>
+                            <!--Кнопкf "Сохранить"-->
+                            <Button x:Name="save" Width="300" Height="70" Background="RoyalBlue" FontSize="30" FontWeight="Black" Foreground="White" Click="save_Click">Сохранить</Button>
+
+                        </StackPanel>
+                    </Border>
+
+                    <!--Кнопка "Выйти"-->
+                    <Button Width="800" Height="70" Background="Transparent" FontSize="30" FontWeight="Black" Foreground="White" Click="Button_Click">Выйти</Button>
+                </StackPanel>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>
